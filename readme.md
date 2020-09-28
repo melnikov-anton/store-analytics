@@ -1,4 +1,4 @@
-# Store Analytic
+# Store Analytics
 ## Описание
 Скрипт **generate_input_data.py** создает в директории **input_data** файлы входных данных
 **drone_cells.csv** и **video_barcodes.csv**.  
