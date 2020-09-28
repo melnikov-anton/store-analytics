@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store Analytic</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Store Analytic</h1>
+      </header>
+      <div class="buttons">
+        <a class="btn" href="{{ url_for('newdata') }}">Generate new data</a>
+        <a class="btn" href="{{ url_for('unresolved') }}">Data with unresolved cases</a>
+      </div>
+      <main>
+        <table>
+          <caption>Found barcodes</caption>
+          <thead>
+            <tr>
+              <th style="width: 70px;">Sector</th>
+              <th style="width: 70px;">Level</th>
+              <th>Barcode</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for cell in cells %}
+                {% if ',' in cell.barcodes %}
+                  <tr class="suspected-cell">
+                {% elif not cell.barcodes %}
+                  <tr class="empty-cell">
+                {% else %}
+                  <tr>
+                {% endif %}
+
+                  <td>{{ cell.sector }}</td>
+                  <td>{{ cell.level }}</td>
+                  <td>{{ cell.barcodes | trim('[') | trim(']') | replace("'", "") }}</td>
+                </tr>
+              {% endfor %}
+          </tbody>
+        </table>
+      </main>
+
+    </div>
+
+
+  </body>
+</html>

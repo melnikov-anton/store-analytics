@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  min-height: 50px;
+  padding: 15px;
+}
+
+table {
+  min-width: 500px;
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+caption {
+  padding: 3px;
+  font-size: 1.2em;
+}
+thead {
+  background-color: #CCD1D3;
+}
+th {
+  padding: 10px;
+}
+td {
+  text-align: center;
+  padding: 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+  padding-bottom: 40px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #128BDD;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.empty-cell {
+  background-color: #FC4242;
+}
+.suspected-cell {
+  background-color: #FEC80E;
+}
